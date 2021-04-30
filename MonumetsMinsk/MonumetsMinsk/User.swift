@@ -1,6 +1,6 @@
 import SwiftUI
 
-class User {
+class User : Codable{
     var uid: String
     var email: String?
     var emailVerified: Bool?

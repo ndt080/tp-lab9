@@ -27,9 +27,6 @@ struct SingUpView: View {
                             Text("Email").font(.headline).fontWeight(.light).foregroundColor(Color.init(.label))
                             HStack{
                                 TextField("Enter Your Email", text: $email)
-                                if email != "" {
-                                    Image("check").foregroundColor(Color.init(.label))
-                                }
                             }
                             Divider()
                             
@@ -45,9 +42,6 @@ struct SingUpView: View {
                             Text("Name").font(.headline).fontWeight(.light).foregroundColor(Color.init(.label))
                             HStack{
                                 TextField("Enter Your Name", text: $name)
-                                if email != "" {
-                                    Image("check").foregroundColor(Color.init(.label))
-                                }
                             }
                             Divider()
                             
