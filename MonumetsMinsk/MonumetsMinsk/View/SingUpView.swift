@@ -19,29 +19,29 @@ struct SingUpView: View {
     
     var body : some View{
         NavigationView{
-            VStack {
-                VStack(){
-                    Text("Sing Up").fontWeight(.heavy).font(.largeTitle).padding([.top,.bottom], 20)
+                ScrollView(){
+                    Spacer()
+                    Text(Translation.signUp).fontWeight(.heavy).font(.largeTitle).padding([.top,.bottom], 20)
                     VStack(alignment: .leading){
                         VStack(alignment: .leading){
-                            Text("Email").font(.headline).fontWeight(.light).foregroundColor(Color.init(.label))
+                            Text(Translation.titleEmail).font(.headline).fontWeight(.light).foregroundColor(Color.init(.label))
                             HStack{
-                                TextField("Enter Your Email", text: $email)
+                                TextField(Translation.placeholderEmail, text: $email)
                             }
                             Divider()
                             
                         }.padding(.bottom, 15)
                         
                         VStack(alignment: .leading){
-                            Text("Password").font(.headline).fontWeight(.light).foregroundColor(Color.init(.label))
-                            SecureField("Enter Your Password", text: $pass)
+                            Text(Translation.titlePass).font(.headline).fontWeight(.light).foregroundColor(Color.init(.label))
+                            SecureField(Translation.placeholderPass, text: $pass)
                             Divider()
                         }
                         
                         VStack(alignment: .leading){
-                            Text("Name").font(.headline).fontWeight(.light).foregroundColor(Color.init(.label))
+                            Text(Translation.titleName).font(.headline).fontWeight(.light).foregroundColor(Color.init(.label))
                             HStack{
-                                TextField("Enter Your Name", text: $name)
+                                TextField(Translation.placeholderName, text: $name)
                             }
                             Divider()
                             
@@ -52,13 +52,13 @@ struct SingUpView: View {
                     VStack{
                         Toggle(isOn: $agreeCheck)
                         {
-                            Text("Agree to the Terms and Conditions and Privacy Policy of NLogger").font(.caption)
+                            Text(Translation.terms).font(.caption)
                             
                         }.frame(minWidth: 0, maxWidth: .infinity, alignment: .topLeading)
                         .padding(.top, 45)
                         
                         Button(action: { registration() }) {
-                            Text("Sign Up").foregroundColor(.white).frame(width: UIScreen.main.bounds.width - 120).padding()
+                            Text(Translation.signUp).foregroundColor(.white).frame(width: UIScreen.main.bounds.width - 120).padding()
                         }
                         .disabled(!agreeCheck)
                         .font(.headline)
@@ -70,28 +70,30 @@ struct SingUpView: View {
                         
                         
                         HStack(spacing: 8){
-                            Text("Do you have an account?")
+                            Text(Translation.queshionHaveAcc)
                             NavigationLink(destination: SingInView()) {
-                                Text("Sign in").foregroundColor(.green)
+                                Text(Translation.signIn).foregroundColor(.green)
                             }
                         }.padding(.top, 25)
                     }
-                }.padding()
                 
-            }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
+            }.padding()
+                .frame(minWidth: UIScreen.main.bounds.width, minHeight: 400, alignment: .center)
             .background(
                 LinearGradient(gradient: Gradient(colors: [.purple, .blue]), startPoint: .top, endPoint: .bottom)
                     .edgesIgnoringSafeArea(.all))
         }
         .navigationBarHidden(true)
     }
+    
 }
+
 
 
 
 
 struct SingUpView_Previews: PreviewProvider {
     static var previews: some View {
-        SingUpView()
+        SingUpView().environment(\.locale, .init(identifier: "en"))
     }
 }

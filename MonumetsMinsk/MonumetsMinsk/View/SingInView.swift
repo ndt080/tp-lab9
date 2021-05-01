@@ -2,6 +2,7 @@ import SwiftUI
 import Firebase
 
 struct SingInView: View {
+    @ObservedObject var settings = UserSettings()
     @State var email: String = ""
     @State var password: String = ""
     
@@ -10,6 +11,8 @@ struct SingInView: View {
             if error != nil {
                 print(error?.localizedDescription ?? "error")
             } else {
+                let tmp = email.split(separator: "@")
+                settings.userName = String(tmp[0])
                 print("Success")
             }
         }
@@ -17,28 +20,28 @@ struct SingInView: View {
     
     var body : some View{
         NavigationView{
-            VStack {
-                VStack(){
-                    Text("Sign In").fontWeight(.heavy).font(.largeTitle).padding([.top,.bottom], 20)
+                ScrollView(){
+                    Spacer()
+                    Text(Translation.signIn).fontWeight(.heavy).font(.largeTitle).padding([.top,.bottom], 20)
                     VStack(alignment: .leading){
                         VStack(alignment: .leading){
-                            Text("Email").font(.headline).fontWeight(.light).foregroundColor(Color.init(.label))
+                            Text(Translation.titleEmail).font(.headline).fontWeight(.light).foregroundColor(Color.init(.label))
                             HStack{
-                                TextField("Enter Your Email", text: $email)
+                                TextField(Translation.placeholderEmail, text: $email)
                             }
                             Divider()
                             
                         }.padding(.bottom, 15)
                         
                         VStack(alignment: .leading){
-                            Text("Password").font(.headline).fontWeight(.light).foregroundColor(Color.init(.label))
-                            SecureField("Enter Your Password", text: $password)
+                            Text(Translation.titlePass).font(.headline).fontWeight(.light).foregroundColor(Color.init(.label))
+                            SecureField(Translation.placeholderPass, text: $password)
                             Divider()
                         }
                     }.padding(.horizontal, 6)
                     VStack{
                         Button(action: { login() }) {
-                            Text("Sign In").foregroundColor(.white).frame(width: UIScreen.main.bounds.width - 120).padding()
+                            Text(Translation.signIn).foregroundColor(.white).frame(width: UIScreen.main.bounds.width - 120).padding()
                         
                         }
                         .font(.headline)
@@ -49,15 +52,15 @@ struct SingInView: View {
                         .padding(.top, 45)
                         
                         HStack(spacing: 8){
-                            Text("Don't have an account ?")
+                            Text(Translation.queshionDontHaveAcc)
                             NavigationLink(destination: SingUpView()) {
-                                Text("Sign Up").foregroundColor(.green)
+                                Text(Translation.signUp).foregroundColor(.green)
                             }
                         }.padding(.top, 25)
                     }
-                }.padding()
                 
-            }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
+            }.padding()
+                .frame(minWidth: UIScreen.main.bounds.width, minHeight: 400, alignment: .center)
             .background(
                 LinearGradient(gradient: Gradient(colors: [.purple, .blue]), startPoint: .top, endPoint: .bottom)
                     .edgesIgnoringSafeArea(.all))
@@ -72,6 +75,6 @@ struct SingInView: View {
 
 struct SingInView_Previews: PreviewProvider {
     static var previews: some View {
-        SingInView()
+        SingInView().environment(\.locale, .init(identifier: "en"))
     }
 }

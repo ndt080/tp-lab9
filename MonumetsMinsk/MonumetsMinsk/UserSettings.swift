@@ -11,8 +11,8 @@ final class UserSettings: ObservableObject {
         }
     }
     
-    @UserDefault("isAuth", defaultValue: false)
-    var isAuth: Bool {
+    @UserDefault("userName", defaultValue: "User")
+    var userName: String {
         willSet {
             objectWillChange.send()
         }

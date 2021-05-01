@@ -8,7 +8,7 @@ struct MainView: View {
         VStack(alignment: .trailing) {
             NavigationView{
                 List{
-                    TextField("Search monuments",text: $searchText)
+                    TextField(Translation.searchPlaceholderMonum,text: $searchText)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                     
                     ForEach(data.monuments.filter{$0.name.contains(searchText) || searchText == ""}, id: \.name){

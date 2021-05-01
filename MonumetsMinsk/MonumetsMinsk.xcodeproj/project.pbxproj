@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8D23241763E7FCDF58B48008 /* Pods_MonumetsMinsk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42012C9E0908860862C07FFB /* Pods_MonumetsMinsk.framework */; };
+		C92F79DE263D444000A733A4 /* Translate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92F79DD263D444000A733A4 /* Translate.swift */; };
+		C92F79E9263D51D700A733A4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C92F79EB263D51D700A733A4 /* Localizable.strings */; };
 		C95A0D07263C02A8009E8727 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A0D06263C02A8009E8727 /* Storage.swift */; };
 		C95DA188263A10780063F3A2 /* FirebaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95DA187263A10780063F3A2 /* FirebaseAuth.swift */; };
 		C99319EF263A7987000689D9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99319EE263A7987000689D9 /* HomeView.swift */; };
@@ -37,6 +39,10 @@
 		2712C543DFB3C922B3F3D0E5 /* Pods-MonumetsMinsk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonumetsMinsk.debug.xcconfig"; path = "Target Support Files/Pods-MonumetsMinsk/Pods-MonumetsMinsk.debug.xcconfig"; sourceTree = "<group>"; };
 		42012C9E0908860862C07FFB /* Pods_MonumetsMinsk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MonumetsMinsk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1B8E2D491D91DA47C07FF09 /* Pods-MonumetsMinsk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonumetsMinsk.release.xcconfig"; path = "Target Support Files/Pods-MonumetsMinsk/Pods-MonumetsMinsk.release.xcconfig"; sourceTree = "<group>"; };
+		C92F79DD263D444000A733A4 /* Translate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translate.swift; sourceTree = "<group>"; };
+		C92F79EA263D51D700A733A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C92F79ED263D524C00A733A4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C92F79EF263D525400A733A4 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C95A0D06263C02A8009E8727 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		C95DA187263A10780063F3A2 /* FirebaseAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuth.swift; sourceTree = "<group>"; };
 		C99319EE263A7987000689D9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -111,6 +117,7 @@
 				C9B02F382639E8A70036D04D /* Controller */,
 				C9B02F272639E7D10036D04D /* MonumetsMinskApp.swift */,
 				C9B02F292639E7D10036D04D /* ContentView.swift */,
+				C92F79EB263D51D700A733A4 /* Localizable.strings */,
 				C9B02F2B2639E7D20036D04D /* Assets.xcassets */,
 				C9B02F54263A040C0036D04D /* GoogleService-Info.plist */,
 				C9B02F302639E7D20036D04D /* Info.plist */,
@@ -133,6 +140,7 @@
 				C95DA187263A10780063F3A2 /* FirebaseAuth.swift */,
 				C99319F1263A8424000689D9 /* SessionStore.swift */,
 				C9EBC90F263B549500CE09D8 /* PlistControl.swift */,
+				C92F79DD263D444000A733A4 /* Translate.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -225,6 +233,8 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
+				de,
 			);
 			mainGroup = C9B02F1B2639E7D10036D04D;
 			productRefGroup = C9B02F252639E7D10036D04D /* Products */;
@@ -242,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9EBC8FD263B425D00CE09D8 /* Sculptors.plist in Resources */,
+				C92F79E9263D51D700A733A4 /* Localizable.strings in Resources */,
 				C9EBC900263B427300CE09D8 /* Monuments.plist in Resources */,
 				C9B02F2F2639E7D20036D04D /* Preview Assets.xcassets in Resources */,
 				C9B02F2C2639E7D20036D04D /* Assets.xcassets in Resources */,
@@ -313,6 +324,7 @@
 				C9B02F442639EA570036D04D /* SingInView.swift in Sources */,
 				C9EBC90D263B509A00CE09D8 /* MonumentView.swift in Sources */,
 				C9EBC8F9263B413F00CE09D8 /* Sculptor.swift in Sources */,
+				C92F79DE263D444000A733A4 /* Translate.swift in Sources */,
 				C9B02F3C2639E8F20036D04D /* UserDefault.swift in Sources */,
 				C9EBC90A263B4F7800CE09D8 /* RecordView.swift in Sources */,
 				C9B02F522639FC700036D04D /* User.swift in Sources */,
@@ -321,11 +333,25 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		C92F79EB263D51D700A733A4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C92F79EA263D51D700A733A4 /* en */,
+				C92F79ED263D524C00A733A4 /* ru */,
+				C92F79EF263D525400A733A4 /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		C9B02F312639E7D20036D04D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -387,6 +413,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

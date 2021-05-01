@@ -9,7 +9,6 @@ struct RecordView: View {
                 .resizable()
                 .frame(width: 110, height: 70)
                 .cornerRadius(6.0)
-                .padding()
             VStack(alignment: .leading, spacing: 3) {
                 Text(obj.name).font(.headline)
             }

@@ -26,20 +26,19 @@ struct HomeView: View {
                             .frame(width: geometry.size.width*2/3)
                             .transition(.move(edge: .leading))
                     }
-                }
-                    .gesture(drag)
+                }.gesture(drag)
             }
-                .navigationBarTitle("", displayMode: .inline)
-                .navigationBarItems(leading: (
-                    Button(action: {
-                        withAnimation {
-                            self.showMenu.toggle()
-                        }
-                    }) {
-                        Image(systemName: "line.horizontal.3")
-                            .imageScale(.large)
+            .navigationBarTitle(Translation.titleMonumentsSearchPage, displayMode: .inline)
+            .navigationBarItems(leading: (
+                Button(action: {
+                    withAnimation {
+                        self.showMenu.toggle()
                     }
-                ))
+                }) {
+                    Image(systemName: "line.horizontal.3")
+                        .imageScale(.large)
+                }
+            ))
         }.environmentObject(Storage())
     }
 }

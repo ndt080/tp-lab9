@@ -2,12 +2,26 @@ import SwiftUI
 import Firebase
 
 struct MenuView: View {
+    @ObservedObject var settings = UserSettings()
+    
     func logout() {
         do {
             try Auth.auth().signOut()
             print("succes logout")
         } catch {
             print("error logout")
+        }
+    }
+    func setLocale(locale : String){
+        switch locale {
+        case "en":
+            print("Succes set locale")
+        case "ru":
+            print("Succes set locale")
+        case "ge":
+            print("Succes set locale")
+        default:
+            print("Unknown locale!")
         }
     }
     
@@ -18,17 +32,24 @@ struct MenuView: View {
                 Image(systemName: "person")
                     .foregroundColor(.gray)
                     .imageScale(.large)
-                Text("Profile")
+                Text(settings.userName)
                     .foregroundColor(.gray)
                     .font(.headline)
             }
             .padding(.top, 100)
             HStack {
                 GroupBox {
-                    DisclosureGroup("Language") {
-                        Text("English")
-                        Text("Русский")
-                        Text("Germanu")
+                    DisclosureGroup(Translation.titleNavApp) {
+                        Button(action: {
+                            setLocale(locale: "en")
+                        }, label: {
+                            Text(Translation.titleNavAppIthem1).foregroundColor(.green)
+                        })
+                        Button(action: {
+                            setLocale(locale: "ru")
+                        }, label: {
+                            Text(Translation.titleNavAppIthem2)
+                        }).padding(.top, 0.5)
                     }
                 }
             }
@@ -37,7 +58,7 @@ struct MenuView: View {
                 Image(systemName: "square.and.arrow.up")
                     .foregroundColor(.gray)
                     .imageScale(.large)
-                Text("Logout")
+                Text(Translation.logout)
                     .foregroundColor(.gray)
                     .font(.headline)
             }
@@ -45,7 +66,6 @@ struct MenuView: View {
                 logout()
             }
             .padding(.top, 30)
-            
             Spacer()
         }
             .padding()

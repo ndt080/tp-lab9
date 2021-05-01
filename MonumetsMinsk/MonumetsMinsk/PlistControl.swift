@@ -8,9 +8,9 @@ func GetMonumentsWithPlist() -> [Monument]{
             let infoPlistData = try Data(contentsOf: infoPlistPath)
             if let arr = try PropertyListSerialization.propertyList(from: infoPlistData, options: [], format: nil) as? [String:AnyObject] {
                 print(arr)
-                for (_, value) in arr{
+                for (key, value) in arr{
                     let obj = Monument(
-                        id: value["id"] as! Int,
+                        id: Int(key)!,
                         name: value["name"] as! String,
                         year: value["year"] as! Date,
                         authorId: value["authorID"] as! Int,
@@ -35,9 +35,9 @@ func GetSculptorsWithPlist() -> [Sculptor]{
             let infoPlistData = try Data(contentsOf: infoPlistPath)
             if let arr = try PropertyListSerialization.propertyList(from: infoPlistData, options: [], format: nil) as? [String:AnyObject] {
                 print(arr)
-                for (_, value) in arr{
+                for (key, value) in arr{
                     let obj = Sculptor(
-                        id: value["id"] as! Int,
+                        id: Int(key)!,
                         name: value["name"] as! String,
                         datebirth: value["datebirth"] as! Date
                     )
