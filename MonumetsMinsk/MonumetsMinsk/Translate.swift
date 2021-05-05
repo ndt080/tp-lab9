@@ -55,7 +55,7 @@ enum Translation {
     static var titleNavAppIthem1: LocalizedStringKey {
         return "titleNavAppIthem1"
     }
-    static var titleNavAppIthem2: LocalizedStringKey {
-        return "titleNavAppIthem2"
+    static var logOutConfirmation: LocalizedStringKey {
+        return "logOutConfirmation"
     }
 }

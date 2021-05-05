@@ -2,44 +2,59 @@ import SwiftUI
 import Firebase
 
 struct HomeView: View {
-    @State var showMenu = false
+    @State var selection = 0
+    @State var searchText: String = ""
+    @EnvironmentObject var data : Storage
+    
+    func logout() {
+        do {
+            try Auth.auth().signOut()
+            print("succes logout")
+        } catch {
+            print("error logout")
+        }
+    }
     
     var body: some View {
-        let drag = DragGesture()
-            .onEnded {
-                if $0.translation.width < -100 {
-                    withAnimation {
-                        self.showMenu = false
+        TabView(selection: $selection) {
+            VStack(alignment: .trailing) {
+                NavigationView{
+                    List{
+                        TextField(Translation.searchPlaceholderMonum,text: $searchText)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                        
+                        ForEach(data.monuments.filter{$0.name.contains(searchText) || searchText == ""}, id: \.name){
+                            obj in
+                            NavigationLink(
+                                destination: MonumentView(obj: obj)) {
+                                RecordView(obj: obj)
+                            }
+                        }
                     }
+                    .navigationBarHidden(true)
                 }
             }
-        
-        NavigationView {
-            GeometryReader { geometry in
-                ZStack(alignment: .leading) {
-                    MainView()
-                        .frame(width: geometry.size.width, height: geometry.size.height)
-                        .offset(x: self.showMenu ? geometry.size.width*1/3 : 0)
-                        .disabled(self.showMenu ? true : false)
-                    if self.showMenu {
-                        MenuView()
-                            .frame(width: geometry.size.width*2/3)
-                            .transition(.move(edge: .leading))
-                    }
-                }.gesture(drag)
+            .ignoresSafeArea(.all, edges: .all)
+            .tabItem {
+                Image(systemName: "list.bullet.rectangle")
+                Text(Translation.titleNavAppIthem1)
             }
-            .navigationBarTitle(Translation.titleMonumentsSearchPage, displayMode: .inline)
-            .navigationBarItems(leading: (
-                Button(action: {
-                    withAnimation {
-                        self.showMenu.toggle()
-                    }
-                }) {
-                    Image(systemName: "line.horizontal.3")
-                        .imageScale(.large)
+            VStack(alignment: .center, spacing: 10, content: {
+                Text(Translation.logOutConfirmation)
+                Button(action: {logout()}, label: {
+                    Text(Translation.logout)
+                })
+            })
+            .ignoresSafeArea(.all, edges: .all)
+            .font(.system(size: 30, weight: .bold))
+            .tabItem {
+                VStack(){
+                    Image(systemName: "square.and.arrow.up")
+                    Text(Translation.logout)
                 }
-            ))
-        }.environmentObject(Storage())
+            }
+        }.background(BlurView(style: .systemMaterial).opacity(0.8))
+        .ignoresSafeArea(.all, edges: .all)
     }
 }
 

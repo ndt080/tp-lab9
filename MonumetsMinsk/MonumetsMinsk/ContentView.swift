@@ -8,7 +8,7 @@ struct ContentView: View {
         if(!session.isLoggedIn){
             SingInView()
         } else {
-            HomeView()
+            HomeView().environmentObject(Storage())
         }
     }
 }

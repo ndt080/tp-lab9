@@ -12,6 +12,7 @@
 		C92F79E9263D51D700A733A4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C92F79EB263D51D700A733A4 /* Localizable.strings */; };
 		C95A0D07263C02A8009E8727 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A0D06263C02A8009E8727 /* Storage.swift */; };
 		C95DA188263A10780063F3A2 /* FirebaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95DA187263A10780063F3A2 /* FirebaseAuth.swift */; };
+		C9661F4B2641C3C40008A8EF /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9661F4A2641C3C40008A8EF /* BlurView.swift */; };
 		C99319EF263A7987000689D9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99319EE263A7987000689D9 /* HomeView.swift */; };
 		C99319F2263A8424000689D9 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99319F1263A8424000689D9 /* SessionStore.swift */; };
 		C9B02F282639E7D10036D04D /* MonumetsMinskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B02F272639E7D10036D04D /* MonumetsMinskApp.swift */; };
@@ -28,8 +29,6 @@
 		C9EBC8F9263B413F00CE09D8 /* Sculptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EBC8F8263B413F00CE09D8 /* Sculptor.swift */; };
 		C9EBC8FD263B425D00CE09D8 /* Sculptors.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9EBC8FC263B425D00CE09D8 /* Sculptors.plist */; };
 		C9EBC900263B427300CE09D8 /* Monuments.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9EBC8FF263B427300CE09D8 /* Monuments.plist */; };
-		C9EBC903263B46A900CE09D8 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EBC902263B46A900CE09D8 /* MenuView.swift */; };
-		C9EBC907263B4F2500CE09D8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EBC906263B4F2500CE09D8 /* MainView.swift */; };
 		C9EBC90A263B4F7800CE09D8 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EBC909263B4F7800CE09D8 /* RecordView.swift */; };
 		C9EBC90D263B509A00CE09D8 /* MonumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EBC90C263B509A00CE09D8 /* MonumentView.swift */; };
 		C9EBC910263B549500CE09D8 /* PlistControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EBC90F263B549500CE09D8 /* PlistControl.swift */; };
@@ -45,6 +44,7 @@
 		C92F79EF263D525400A733A4 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C95A0D06263C02A8009E8727 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		C95DA187263A10780063F3A2 /* FirebaseAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuth.swift; sourceTree = "<group>"; };
+		C9661F4A2641C3C40008A8EF /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		C99319EE263A7987000689D9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C99319F1263A8424000689D9 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		C9B02F242639E7D10036D04D /* MonumetsMinsk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonumetsMinsk.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,8 +63,6 @@
 		C9EBC8F8263B413F00CE09D8 /* Sculptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sculptor.swift; sourceTree = "<group>"; };
 		C9EBC8FC263B425D00CE09D8 /* Sculptors.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Sculptors.plist; sourceTree = "<group>"; };
 		C9EBC8FF263B427300CE09D8 /* Monuments.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Monuments.plist; sourceTree = "<group>"; };
-		C9EBC902263B46A900CE09D8 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
-		C9EBC906263B4F2500CE09D8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		C9EBC909263B4F7800CE09D8 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
 		C9EBC90C263B509A00CE09D8 /* MonumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentView.swift; sourceTree = "<group>"; };
 		C9EBC90F263B549500CE09D8 /* PlistControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistControl.swift; sourceTree = "<group>"; };
@@ -154,6 +152,7 @@
 				C9EBC8F5263B408800CE09D8 /* Monument.swift */,
 				C9EBC8F8263B413F00CE09D8 /* Sculptor.swift */,
 				C95A0D06263C02A8009E8727 /* Storage.swift */,
+				C9661F4A2641C3C40008A8EF /* BlurView.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -164,8 +163,6 @@
 				C9B02F432639EA570036D04D /* SingInView.swift */,
 				C9B02F4E2639F8900036D04D /* SingUpView.swift */,
 				C99319EE263A7987000689D9 /* HomeView.swift */,
-				C9EBC902263B46A900CE09D8 /* MenuView.swift */,
-				C9EBC906263B4F2500CE09D8 /* MainView.swift */,
 				C9EBC909263B4F7800CE09D8 /* RecordView.swift */,
 				C9EBC90C263B509A00CE09D8 /* MonumentView.swift */,
 			);
@@ -310,7 +307,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C99319EF263A7987000689D9 /* HomeView.swift in Sources */,
-				C9EBC907263B4F2500CE09D8 /* MainView.swift in Sources */,
 				C9B02F2A2639E7D10036D04D /* ContentView.swift in Sources */,
 				C95DA188263A10780063F3A2 /* FirebaseAuth.swift in Sources */,
 				C9B02F402639E9940036D04D /* UserSettings.swift in Sources */,
@@ -318,7 +314,6 @@
 				C9B02F4F2639F8900036D04D /* SingUpView.swift in Sources */,
 				C9B02F282639E7D10036D04D /* MonumetsMinskApp.swift in Sources */,
 				C99319F2263A8424000689D9 /* SessionStore.swift in Sources */,
-				C9EBC903263B46A900CE09D8 /* MenuView.swift in Sources */,
 				C9EBC910263B549500CE09D8 /* PlistControl.swift in Sources */,
 				C9EBC8F6263B408800CE09D8 /* Monument.swift in Sources */,
 				C9B02F442639EA570036D04D /* SingInView.swift in Sources */,
@@ -326,6 +321,7 @@
 				C9EBC8F9263B413F00CE09D8 /* Sculptor.swift in Sources */,
 				C92F79DE263D444000A733A4 /* Translate.swift in Sources */,
 				C9B02F3C2639E8F20036D04D /* UserDefault.swift in Sources */,
+				C9661F4B2641C3C40008A8EF /* BlurView.swift in Sources */,
 				C9EBC90A263B4F7800CE09D8 /* RecordView.swift in Sources */,
 				C9B02F522639FC700036D04D /* User.swift in Sources */,
 			);
