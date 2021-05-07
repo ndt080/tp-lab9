@@ -3,11 +3,15 @@ import MapKit
 import CoreData
 
 struct BookingView: View {
+    @EnvironmentObject var str : Storage
+    var local = UserSettings()
     @Environment(\.managedObjectContext) var moc: NSManagedObjectContext
     @FetchRequest(entity: BookingFlight.entity(), sortDescriptors: []) var flights: FetchedResults<BookingFlight>
-    
+    @FetchRequest(entity: LMAModel.entity(), sortDescriptors: []) var LMAs: FetchedResults<LMAModel>
     @Binding var routeAnnotation: [MKAnnotation]
     @State private var selection = 0
+    @State private var isSelection = false
+    @State private var isPay = false
     @State private var selectionflight = 0
     @State private var firstname: String = ""
     @State private var lastname: String = ""
@@ -22,7 +26,6 @@ struct BookingView: View {
                     }
                     HStack(){
                         Text("To: " + (routeAnnotation[1].title)!!)
-                        
                     }
                 }
                 Section(header: Text("Boogking a ticket")) {
@@ -42,35 +45,55 @@ struct BookingView: View {
                     VStack(){
                         Picker(selection: $selectionflight, label: Text("")) {
                             List {
-                                ForEach(flights, id: \.self) { fl in
-                                    HStack {
-                                        VStack(alignment: .leading) {
-                                            Text("asfsf")
-                                            Text("trail.location").font(.subheadline).foregroundColor(.gray)
+                                ForEach(flights.indices, id: \.self) { index in
+                                    if flights[index].fromId == self.LMAs.first(where: { $0.title == (routeAnnotation[0].title)})?.id
+                                        &&
+                                       flights[index].toId == self.LMAs.first(where: { $0.title == (routeAnnotation[1].title)})?.id
+                                    {
+                                        HStack {
+                                            VStack(alignment: .leading) {
+                                                Text(flights[index].title)
+                                                Text(flights[index].duration + "hour").font(.subheadline).foregroundColor(.gray)
+                                            }
+                                            Spacer()
+                                            Text(flights[index].timeStart)
                                         }
-                                        Spacer()
-                                        Text("11:15")
-                                    }.tag(0)
+                                        .tag(index)
+                                    }
                                 }
                             }
-                        }.animation(.easeInOut(duration: 0.5))
+                        }.onChange(of: selectionflight) { newValue in
+                            isSelection = true
+                        }
+                        .animation(.easeInOut(duration: 0.5))
                     }
                 }
+                
                 Section(header: Text("Ticket price")) {
                     HStack(alignment: .bottom){
                         Text("Total: ")
                         Spacer()
-                        Text("15$")
+                        Text(isSelection ? String(Int(flights[selectionflight].price)) + "$" : "none")
                     }
                 }
-                Button(action: {
-                    
-                    
-                }) {
-                    Text("Pay")
+                if isSelection{
+                    Button(action: {
+                        let ticket = Ticket(firstName: firstname, lastName: lastname, date: date, flight: flights[selectionflight])
+                        str.tickets.append(ticket)
+//                        local.tickets = obj
+                        isPay = true
+                    }) {
+                        Text("Pay")
+                    }
+                    .foregroundColor( Color(#colorLiteral(red: 0.9803921569, green: 0.3921568627, blue: 0, alpha: 1)))
+                    .frame(width: UIScreen.main.bounds.width-65, height: 44)
+                    .actionSheet(isPresented: $isPay) {
+                        ActionSheet(title: Text("Ticket paid successfully!"), buttons: [.default(Text("Ok"))])
+                    }
+                } else {
+                    Text("Payment is not possible. No flights selected").foregroundColor( Color(#colorLiteral(red: 0.9803921569, green: 0.3921568627, blue: 0, alpha: 1)))
                 }
-                .foregroundColor(Color(#colorLiteral(red: 0.9803921569, green: 0.3921568627, blue: 0, alpha: 1)))
-                .frame(width: UIScreen.main.bounds.width-65, height: 44)
+                
             }
             .navigationBarHidden(true)
         }

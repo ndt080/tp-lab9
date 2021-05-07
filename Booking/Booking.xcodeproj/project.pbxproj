@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		C92084B526451AAA0013CBCA /* DontBookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92084B426451AAA0013CBCA /* DontBookingView.swift */; };
+		C92E2A852645C77C007AAC0B /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92E2A842645C77C007AAC0B /* UserSettings.swift */; };
+		C92E2A872645C79B007AAC0B /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92E2A862645C79B007AAC0B /* UserDefault.swift */; };
+		C92E2A892645C7D5007AAC0B /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92E2A882645C7D5007AAC0B /* Ticket.swift */; };
 		C94E8A3726454821008E37FB /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94E8A3626454821008E37FB /* Storage.swift */; };
 		C94E8A39264549AC008E37FB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94E8A38264549AC008E37FB /* MainView.swift */; };
 		C94E8A3B26454A1C008E37FB /* LMAModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94E8A3A26454A1C008E37FB /* LMAModel.swift */; };
@@ -30,6 +33,9 @@
 
 /* Begin PBXFileReference section */
 		C92084B426451AAA0013CBCA /* DontBookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DontBookingView.swift; sourceTree = "<group>"; };
+		C92E2A842645C77C007AAC0B /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		C92E2A862645C79B007AAC0B /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		C92E2A882645C7D5007AAC0B /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
 		C94E8A3626454821008E37FB /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		C94E8A38264549AC008E37FB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		C94E8A3A26454A1C008E37FB /* LMAModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMAModel.swift; sourceTree = "<group>"; };
@@ -111,6 +117,9 @@
 				C94E8A3626454821008E37FB /* Storage.swift */,
 				C94E8A3A26454A1C008E37FB /* LMAModel.swift */,
 				C964B8BC26456A1200EC1429 /* BookingFlightModel.swift */,
+				C92E2A842645C77C007AAC0B /* UserSettings.swift */,
+				C92E2A862645C79B007AAC0B /* UserDefault.swift */,
+				C92E2A882645C7D5007AAC0B /* Ticket.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -215,14 +224,17 @@
 				C94E8A3B26454A1C008E37FB /* LMAModel.swift in Sources */,
 				C9743D6A26449233000C9E7A /* RouteFormView.swift in Sources */,
 				C9743D6E26449262000C9E7A /* Api.swift in Sources */,
+				C92E2A892645C7D5007AAC0B /* Ticket.swift in Sources */,
 				C95A37BB2644B56700CB02E9 /* Booking.xcdatamodeld in Sources */,
 				C9743D6726449233000C9E7A /* BlurView.swift in Sources */,
 				C964B8BF2645819400EC1429 /* ProfileView.swift in Sources */,
 				C9743D5026449138000C9E7A /* ContentView.swift in Sources */,
 				C9743D6C26449233000C9E7A /* MapView.swift in Sources */,
 				C964B8BD26456A1200EC1429 /* BookingFlightModel.swift in Sources */,
+				C92E2A852645C77C007AAC0B /* UserSettings.swift in Sources */,
 				C9743D6B26449233000C9E7A /* WeatherData.swift in Sources */,
 				C9743D4E26449138000C9E7A /* BookingApp.swift in Sources */,
+				C92E2A872645C79B007AAC0B /* UserDefault.swift in Sources */,
 				C94E8A39264549AC008E37FB /* MainView.swift in Sources */,
 				C92084B526451AAA0013CBCA /* DontBookingView.swift in Sources */,
 			);

@@ -9,7 +9,7 @@ struct MainView: View {
     @State var selectedAnnotation: MKAnnotation?
     @State var routeAnnotation: [MKAnnotation] = []
     @Binding var landmarks: [LandmarkAnnotation]
-
+    @EnvironmentObject var str : Storage
     
     var body: some View {
         TabView(selection: $selection) {
@@ -46,7 +46,6 @@ struct MainView: View {
                 Text("Booking")
             }
             ProfileView()
-                .font(.system(size: 30, weight: .bold, design: .rounded))
                 .tabItem {
                     Image(systemName: "person.crop.circle")
                     Text("Profile")

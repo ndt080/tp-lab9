@@ -16,7 +16,7 @@
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="LMAModel" positionX="-1099.845825195312" positionY="143.9490356445312" width="128" height="89"/>
         <element name="BookingFlight" positionX="-1098" positionY="171" width="128" height="134"/>
+        <element name="LMAModel" positionX="-1099.845825195312" positionY="143.9490356445312" width="128" height="89"/>
     </elements>
 </model>

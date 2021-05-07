@@ -4,7 +4,7 @@ import CoreData
 class BookingFlight: NSManagedObject, Identifiable {
     @NSManaged public var id: UUID
     @NSManaged public var title: String
-    @NSManaged public var price: String
+    @NSManaged public var price: Double
     @NSManaged public var toId: UUID
     @NSManaged public var fromId: UUID
     @NSManaged public var timeStart: String
