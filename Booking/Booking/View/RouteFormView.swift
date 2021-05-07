@@ -13,20 +13,19 @@ struct RouteFormView: View {
     
     func createRoute(type: String){
         if type == "From" &&  !selectedAnnotation!.isEqual(toRoute) {
-            self.fromRoute = self.selectedAnnotation
+            fromRoute = selectedAnnotation
             if(tmpRouteAnnotation.count == 0){
-                self.tmpRouteAnnotation.append(self.selectedAnnotation!)
+                tmpRouteAnnotation.append(selectedAnnotation!)
             } else {
-                self.tmpRouteAnnotation[0] = self.selectedAnnotation!
-                
+                tmpRouteAnnotation[0] = selectedAnnotation!
             }
         }
         if type == "To" &&  !selectedAnnotation!.isEqual(fromRoute) {
-            self.toRoute = self.selectedAnnotation
+            toRoute = selectedAnnotation
             if(tmpRouteAnnotation.count < 2){
-                self.tmpRouteAnnotation.append(self.selectedAnnotation!)
+                tmpRouteAnnotation.append(selectedAnnotation!)
             } else {
-                self.tmpRouteAnnotation[1] = self.selectedAnnotation!
+                tmpRouteAnnotation[1] = selectedAnnotation!
             }
         }
     }
@@ -37,7 +36,6 @@ struct RouteFormView: View {
     }
     
     var body: some View {
-        
         ZStack() {
             VStack(alignment: .center, spacing: 16) {
                 VStack(){
@@ -51,6 +49,7 @@ struct RouteFormView: View {
                         .foregroundColor(.white)
                         .background(Color(#colorLiteral(red: 0.9803921569, green: 0.3921568627, blue: 0, alpha: 1)))
                         .cornerRadius(20)
+                        
                         Button("To") {
                             createRoute(type: "To")
                         }
@@ -60,7 +59,6 @@ struct RouteFormView: View {
                         .foregroundColor(.white)
                         .background(Color(#colorLiteral(red: 0.9803921569, green: 0.3921568627, blue: 0, alpha: 1)))
                         .cornerRadius(20)
-                        
                     }
                     .padding(.bottom, 15)
                     .pickerStyle(SegmentedPickerStyle())
@@ -75,9 +73,7 @@ struct RouteFormView: View {
                 }
                 .padding(.horizontal, 30)
                 
-                Button(action: {
-                    setRoute()
-                }) {
+                Button(action: { setRoute() }) {
                     Text("Select route")
                         .foregroundColor(.white)
                         .frame(width: 250, height: 44)
@@ -85,30 +81,25 @@ struct RouteFormView: View {
                         .cornerRadius(20)
                         .shadow(color: Color(#colorLiteral(red: 0.9803921569, green: 0.3921568627, blue: 0, alpha: 1)).opacity(0.6), radius: 10, y: 10)
                         .padding(.bottom, 30)
-                    
                 }
-                
             }
             .frame(width: 300, height: 250, alignment: .bottom)
-            .background(Color.white)
+            .background(BlurView(style: .systemMaterial))
             .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
             .shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 20)
             
-            VStack(alignment: .leading, spacing: 16) {
-                Image(systemName: "xmark")
-                    .frame(width: 30, height: 30)
-                    .foregroundColor(.black)
-                    .offset(x: 160, y: 35)
-                    .onTapGesture {
-                        self.isActive = false
-                    }
-                
-            }.padding(.trailing, 80)
-            .padding(.top, -15)
-            .frame(width: 300, height: 250, alignment: .top)
+            VStack(alignment: .trailing, spacing: 16) {
+                Button(action: { self.isActive = false }, label: {
+                    Image(systemName: "xmark")
+                        .resizable()
+                        .scaledToFill()
+                        .foregroundColor(.black)
+                }).frame(width: 15, height: 15)
+                .padding(.all, 20)
+            }
+            .frame(width: 300, height: 250, alignment: .topTrailing)
         }
         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height-150, alignment: .bottom)
-        
     }
 }
 
@@ -116,7 +107,6 @@ struct RouteFormView: View {
 struct RouteFormView_Previews: PreviewProvider {
     static var previews: some View {
         let obj = LandmarkAnnotation(title: "Национальный аэропорт Минск",
-                                     subtitle:"Тупо аэропорт",
                                      coordinate: .init(latitude: 53.890632, longitude: 28.033768))
         RouteFormView(isActive: .constant(true),
                       routeAnnotation: .constant([]),

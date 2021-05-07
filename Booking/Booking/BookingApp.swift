@@ -1,17 +1,13 @@
-//
-//  BookingApp.swift
-//  Booking
-//
-//  Created by Andrei Petrov on 1.05.21.
-//
-
 import SwiftUI
 
 @main
 struct BookingApp: App {
+    var persistenceController = PersistenceController.shared
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
