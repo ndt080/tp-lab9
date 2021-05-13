@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0</key>
+	<dict>
+		<key>year</key>
+		<date>1985-06-26T16:56:52Z</date>
+		<key>name</key>
+		<string>Obelisk &apos;To the Hero City of Minsk&apos;</string>
+		<key>authorID</key>
+		<integer>1</integer>
+		<key>description</key>
+		<string>Architectural and sculptural complex in Minsk, including an obelisk and a bronze sculpture Motherland. It is part of the unified ensemble of the Belarusian State Museum of the History of the Great Patriotic War. It is located on a small hill at the beginning of the Pobeda Museum and Park Complex, at the intersection of Pobediteley and Masherov Avenues.</string>
+		<key>image</key>
+		<string>ObeliskTotheHero</string>
+	</dict>
+	<key>1</key>
+	<dict>
+		<key>year</key>
+		<date>1988-03-08T00:00:00Z</date>
+		<key>name</key>
+		<string>Island of tears</string>
+		<key>authorID</key>
+		<integer>0</integer>
+		<key>description</key>
+		<string>The complex is located on an artificial island on the Svisloch River, in the heart of Old Minsk, near the Trinity Suburb. Construction began in 1988, when the Afghan War was not yet over. The entire complex was opened on August 3, 1996. The outline of the Temple is based on the original appearance of the Temple of Euphrosyne of Polotsk, such as it was in the XII century. The memorial complex itself was built according to the project of a group of architects and sculptors under the direction of Yuri Pavlov, whose work was recognized as the best by the results of the competition.</string>
+		<key>image</key>
+		<string>IslandTears</string>
+	</dict>
+	<key>2</key>
+	<dict>
+		<key>year</key>
+		<date>1988-03-08T00:00:00Z</date>
+		<key>name</key>
+		<string>Crying Guardian Angel</string>
+		<key>authorID</key>
+		<integer>0</integer>
+		<key>description</key>
+		<string>The &apos;Weeping Angel&apos; is part of the memorial dedicated to the Belarusian soldiers-internationalists who fell in Afghanistan in 1979-1989. The complex is located on the &quot;Island of Tears&quot; on the Svisloch River, in the heart of Old Minsk, near the Trinity Suburb. The sculpture depicts a small crying angel, who, according to the architects, inconsolably mourns the dead guys. The newlyweds of Minsk consider it a good tradition to lay flowers at this monument. It is believed that this ritual will protect the newly-made husband from death and injury in battle. And the brides rub the member of the sculpture. It is believed that thanks to this ritual, a boy will be born.</string>
+		<key>image</key>
+		<string>CryingGuardianAngel</string>
+	</dict>
+	<key>3</key>
+	<dict>
+		<key>year</key>
+		<date>2014-11-20T00:00:00Z</date>
+		<key>name</key>
+		<string>City Scales Sculpture</string>
+		<key>authorID</key>
+		<integer>2</integer>
+		<key>description</key>
+		<string>The sculpture depicts three townspeople weighing goods. One of the men buys, the second – sells, and the third tracks the weight of the goods. On the ground, at the base of the monument, you can see a scattering of coins that were in use in different periods. Historians have already expressed their opinion about the reliability of each element of the composition and the complete correspondence of even a minor detail to the XVI-XVII centuries.
+
+As many monuments in Minsk are associated with certain signs,so in this case there were no superstitions. After all, even if an interesting place is not associated with any popular sign that people themselves are ready to come up with it. Tourists and visitors of the city began to throw small change on the sculpture &quot;City Scales&quot;, apparently, considering that in such a simple way they will attract good luck and financial well-being.</string>
+		<key>image</key>
+		<string>CityScalesSculpture</string>
+	</dict>
+</dict>
+</plist>

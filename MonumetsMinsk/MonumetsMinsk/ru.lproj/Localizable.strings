@@ -1,0 +1,17 @@
+"Sign In" = "Вход";
+"Sign Up" = "Регистрация";
+"Logout" = "Выйти";
+"Email" = "Почта";
+"Name" = "Имя";
+"Password" = "Пароль";
+"Enter Your Email" = "Введите почту";
+"Enter Your Password" = "Введите пароль";
+"Enter Your Name" = "Введите Ваше имя";
+"Don't have an account ?" = "У вас нету аккаунта?";
+"Have an account?" = "Уже имеется аккаунт?";
+"Agree to the Terms and Conditions and Privacy Policy of NLogger?" = "Соглашаетесь с Условиями и Политикой конфиденциальности NLogger?";
+"Search monuments" = "Найти монументы";
+"Monuments of Minsk city" = "Монументы города Минска";
+"Applications" = "Приложения";
+"titleNavAppIthem1" = "Монументы";
+"logOutConfirmation" = "Вы действительно хотите выйти?";

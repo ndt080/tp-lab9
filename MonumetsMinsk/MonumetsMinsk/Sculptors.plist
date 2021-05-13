@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0</key>
+	<dict>
+		<key>datebirth</key>
+		<date>1953-10-14T00:00:00Z</date>
+		<key>name</key>
+		<string>Dmitry Khomyakov</string>
+	</dict>
+	<key>1</key>
+	<dict>
+		<key>datebirth</key>
+		<date>1937-06-05T00:00:00Z</date>
+		<key>name</key>
+		<string>Valentin Zankovich</string>
+	</dict>
+	<key>2</key>
+	<dict>
+		<key>datebirth</key>
+		<date>1987-06-05T00:00:00Z</date>
+		<key>name</key>
+		<string>Alexander Prokhorov</string>
+	</dict>
+</dict>
+</plist>
